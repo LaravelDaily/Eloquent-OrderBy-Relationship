@@ -16,7 +16,7 @@ class ProductController extends Controller
 
         $products = Product::select(['products.*', 'categories.name as category_name'])
             ->join('categories', 'products.category_id', '=', 'categories.id')
-            ->orderBy('name')
+            ->orderBy('categories.name')
             ->paginate(100);
 
 
